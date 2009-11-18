@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <%= javascript_include_tag :defaults %>
     <title><%= h(@page_title) %></title>
-    
+
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
       google.load("language", "1");
@@ -13,7 +13,7 @@
       function getGoogleTranslation(id, text, from_language, to_language) {
         text = text.replace(/\{\{/, '__').replace(/\}\}/, '__')
         google.language.translate(text, from_language, to_language, function(result) {
-          if (!result.error) { 
+          if (!result.error) {
             result_text = result.translation.unescapeHTML().gsub(/__(.+)__/, function(match){
               return '{{' + match[1] + '}}';
             });
@@ -78,7 +78,7 @@
           if (element.options[i].value == newValue){
             element.selectedIndex = i;
             return true;
-          }        
+          }
         }
       }
     }
